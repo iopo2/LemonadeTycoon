@@ -1,0 +1,169 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("ABC's NOOB Hub", "DarkTheme")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("main")
+
+Section:NewButton("Fly(C)", "Fly", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/XaPTcSfb", true))()
+end)
+
+Section:NewButton("AFK", "AFK", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iopo2/robloxAFK/main/goodafki", true))()
+end)
+
+
+local Tab = Window:NewTab("Autofram")
+local Section = Tab:NewSection("Autofram")
+
+Section:NewToggle("auto Tree1 ", "auto Tree1", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree1)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+Section:NewToggle("auto Tree2 ", "auto Tree2", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree2)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+Section:NewToggle("auto Tree3 ", "auto Tree3", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree3)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+
+Section:NewToggle("auto Tree4 ", "auto Tree4", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree4)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+Section:NewToggle("auto Tree5 ", "auto Tree5", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree5)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+Section:NewToggle("auto Tree6 ", "auto Tree6", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree6)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+Section:NewToggle("auto Tree7 ", "auto Tree7", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree7)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+Section:NewToggle("auto Tree8 ", "auto Tree8", function(state)
+    if state then
+     _G.loop = true
+     while _G.loop == true do wait()
+        game:GetService("ReplicatedStorage").Events.Remotes.Harvest:FireServer(workspace.Tycoons.Tycoon2.Purchases.Tree8)
+    end
+    else
+     _G.loop = false
+    while _G.loop == true do wait()
+     end   
+    end
+end)
+
+
+
+local Tab = Window:NewTab("Telport")
+local Section = Tab:NewSection("Not Telport")
+
+
+
+
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Select Player!")
+Plr = {}
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    table.insert(Plr,v.Name) 
+end
+local drop = Section:NewDropdown("Select Player!", "Click To Select", Plr, function(t)
+   PlayerTP = t
+end)
+Section:NewButton("Click To TP", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerTP].Character.HumanoidRootPart.CFrame
+end)
+Section:NewToggle("Auto Tp", "", function(t)
+_G.TPPlayer = t
+while _G.TPPlayer do wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[PlayerTP].Character.HumanoidRootPart.CFrame
+end
+end)
+
+
+local Tab = Window:NewTab("Player setting")
+local Section = Tab:NewSection("Player setting")
+
+Section:NewSlider("WalkSpeed", "WalkSpeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+
+
+local Tab = Window:NewTab("ToggleUI")
+local Section = Tab:NewSection("ToggleUI")
+
+Section:NewKeybind("ToggleUI", "ToggleUI", Enum.KeyCode.V, function()
+   Library:ToggleUI()
+end)
